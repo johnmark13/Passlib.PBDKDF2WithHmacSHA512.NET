@@ -32,5 +32,21 @@ namespace TestPbkdf2Sha512
                 }
             }
         }
+
+        public static bool VerifySubstandardHash(string password, string hash)
+        {
+            var components = hash.Split('$');
+            var algo = components[1];
+            var iterations = components[2];
+            var rawsalt = components[3];
+            var rawhash = components[4];
+
+            String salt = GenerateComparableHash.StandardiseBase64(rawsalt);
+
+            string regenerated = GenerateComparableHash.Generate64BitHash(password, salt, int.Parse(iterations));
+            string destandardised = GenerateComparableHash.DestandardiseBase64(regenerated);
+
+            return rawhash == destandardised;
+        }
     }
 }

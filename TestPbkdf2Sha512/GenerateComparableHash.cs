@@ -33,7 +33,7 @@ namespace TestPbkdf2Sha512
             }
         }
 
-        public static bool VerifySubstandardHash(string password, string hash)
+        public static bool VerifyNonstandardHash(string password, string hash)
         {
             var components = hash.Split('$');
             var algo = components[1];

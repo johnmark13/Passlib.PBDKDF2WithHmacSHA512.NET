@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/TestPbkdf2Sha512/obj/Debug
+/TestPbkdf2Sha512/bin/Debug
+/TestPbkdf2Sha512/Properties
+/.vs/TestPbkdf2Sha512/v14
